@@ -1,0 +1,59 @@
+/*	Vision 2013.9
+ *	2013 09 22 Starting by Wang
+ ****************************************/
+
+// //-------------- 统一浏览器默认样式 -----------------
+// //	needs Eeics codes
+// #commons() {
+// 	body {
+// 		font-family: "Microsoft YaHei","Microsoft JhengHei",STHeiti,MingLiu;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+// 	//-------------- common样式 -----------------
+// 	ul {
+// 		margin: 0;
+// 		padding: 0;
+// 		list-style-type: none;
+
+// 		li {
+// 			margin: 0;
+// 			padding: 0;
+// 		}
+// 	}
+
+// 	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+// 		margin: 0;
+// 		font-weight: normal;
+// 	}
+// }
+
+//-------------- 浏览器私有前缀简化 -----------------
+#less{
+	.border-radius(@radius: 5px) {
+		-webkit-border-radius: @radius;
+		-moz-border-radius: @radius;
+		border-radius: @radius;
+	}
+
+	.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	  box-shadow: @arguments;
+	  -moz-box-shadow: @arguments;
+	  -webkit-box-shadow: @arguments;
+	}
+
+	.linear-gradient (@deg,@start,@startPre,@end,@endPre) {
+		background: @start; // Old browsers
+		background: -moz-linear-gradient(@deg,  @start @startPre, @end @endPre); // FF3.6+
+		background: -webkit-linear-gradient(@deg,  @start @startPre,@end @endPre); // Chrome10+,Safari5.1+
+		background: -o-linear-gradient(@deg,  @start @startPre,@end @endPre); // Opera 11.10+
+		background: -ms-linear-gradient(@deg,  @start @startPre,@end @endPre); // IE10+
+		background: linear-gradient(@deg,  @start @startPre,@end @endPre); // W3C
+	}
+	.transition (@what: all,@time: 0) {
+		-moz-transition: @what @time;
+		-webkit-transition: @what @time;
+		-o-transition: @what @time;
+		transition: @what @time;
+	}
+}

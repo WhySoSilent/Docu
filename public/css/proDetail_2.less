@@ -1,0 +1,136 @@
+.tbody {
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+
+//标准界面
+	.leftZone {
+		-webkit-box-flex: 1;
+		-webkit-transition: all 0.2s ease;
+		padding: 80px 0px;
+		box-sizing: border-box;
+		
+		img {
+			display: none;
+		}
+
+		ul {
+			list-style-type: none;
+
+			li {
+				display: block;
+				height: 40px;
+				line-height: 40px;
+
+				a {
+					color: #000;
+					text-decoration: none;
+					font-weight: bold;
+
+					&:visited {
+						font-weight: bolder;
+					}
+				}
+			}
+		}
+	}
+
+	.centerZone {
+		-webkit-box-flex: 7;
+		-webkit-transition: all 0.2s ease;
+		padding: 80px 20px;
+		box-sizing: border-box;
+
+		header {
+
+			h1 {
+				display: inline-block;
+				font-size: 45px;
+
+			}
+			p {
+				display: inline-block;
+				color: #767676;
+				margin: 0;
+
+				span {
+					display: inline-block;
+					margin: 0 10px 0 30px;
+
+				}
+			}
+		}
+		.mainContent {
+			// padding: 20px 0;
+			// box-sizing: border-box;
+			
+		}
+	}
+	
+	.rightZone {
+		-webkit-box-flex: 2;
+		-webkit-transition: all 0.2s ease;
+		padding: 80px 0px;
+		box-sizing: border-box;
+
+	}
+//左边菜单出来，右边隐藏
+	&.leftOut {
+		.leftZone {
+			-webkit-box-flex: 3;
+			-webkit-transition: all 0.2s ease;
+			padding: 0px;
+			box-sizing: border-box;
+			
+			ul {
+				border-bottom: 1px solid #676767;
+				border-top: 1px solid #676767;
+					
+				li {
+					display: inline-block;
+					height: 40px;
+					line-height: 40px;
+				}
+			}
+		}
+
+		.centerZone {
+			-webkit-box-flex: 7;
+			-webkit-transition: all 0.2s ease;
+			padding: 80px 50px;
+			box-sizing: border-box;
+
+		}
+		
+		.rightZone {
+			-webkit-box-flex: 0;
+			-webkit-transition: all 0.2s ease;
+			display: none;
+
+		}
+	}
+//右边菜单出来，左边隐藏
+	&.rightOut {
+		.leftZone {
+			-webkit-box-flex: 0;
+			-webkit-transition: all 0.2s ease;
+			display: none;
+		}
+
+		.centerZone {
+			-webkit-box-flex: 7;
+			-webkit-transition: all 0.2s ease;
+			padding: 80px 50px;
+			box-sizing: border-box;
+
+		}
+		
+		.rightZone {
+			-webkit-box-flex: 3;
+			-webkit-transition: all 0.2s ease;
+			padding: 80px 0px;
+			box-sizing: border-box;
+
+		}
+	}
+}

@@ -1,0 +1,98 @@
+		body {
+			margin: 0;
+		}
+
+		a#addMark {
+			position: fixed;
+			margin-left: 10px;
+			width: 130px;
+			top: 10px;
+		}
+		/******************  标题列表  ********************/
+		ul#titleList {
+			list-style-type: none;
+			overflow-x: hidden;
+			overflow-y: auto;
+			margin: 0;
+			padding: 0;
+			width: 180px;
+			height: 90%;
+			position: fixed;
+			top: 60px;
+			left: 0;
+			border: 2px solid hsl(0, 0%, 91%);
+			background: hsl(0, 100%, 100%);
+			z-index: 1000;
+		}
+		ul#titleList li{
+			padding: 5px 0 5px 5px;
+		}
+		/******************  创建新片段  ********************/
+		div#headerBar {
+			margin: 10px 30px 10px 200px;
+			padding: 30px 50px;
+			background: hsl(38, 100%, 89%);
+			border-top: 6px dashed #C0C0C0;
+		}
+		div#headerBar label{
+			float: left;
+			width: 100px;
+		}
+		div#headerBar input#newOneTitle{
+			width: 100%;
+		}
+		div#headerBar textarea#newOneDesc{
+			width: 100%;
+			min-height: 120px; 
+		}
+		div#headerBar textarea#newOneCode{
+			width: 100%;
+			min-height: 230px; 
+		}
+		div#headerBar div.options {
+			padding: 10px 30px;
+			text-align: right;
+		}
+		/******************  文档部分  ********************/
+		ul#sectionList {
+			margin: 10px 30px 10px 200px;
+			list-style-type: none;
+		}
+		div.aEditSection {
+			position: relative;
+		}
+		div.aEditSection div.edit{
+			display: none;
+		}
+		div.aEditSection.editing div.edit{
+			display: block;
+		}
+		div.edit {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		div.edit textarea{
+			width: 100%;
+			height: 100%;
+		}
+		pre.describe {
+			background: #fff;
+			font-size: 130%;
+			border: 0px;
+			border-radius: 0px;
+
+		}
+		pre.code {
+			background: #eee;
+			padding: 10px 0;
+			font-size: 120%;
+		}
+
+		h4.codeLanguage {
+			margin: 5px 0;
+		}
+		a.clear {
+			float: right;
+		}

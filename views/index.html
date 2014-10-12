@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- <html manifest="offline/offline.manifest"> -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>doc</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/common/prettify.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<a id="addMark" href="#createNew" class="btn btn-large btn-success">新增</a>
+		<ul id="titleList"></ul>
+		<ul id="sectionList"></ul>
+		<div id="headerBar">
+			<!-- <label>标题</label> -->
+			<input type="text" id="newOneTitle" placeholder="文档标题" /><br/>
+			<!-- <label>描述你的代码</label> -->
+			<textarea id="newOneDesc" placeholder="描述你的文档"></textarea><br/>
+			<!-- <label>代码</label> -->
+			<textarea id="newOneCode" placeholder="粘贴你的代码"></textarea><br/>
+			<div class="options">
+				<button id="createNew" class="btn btn-info btn-large">添加</button>
+			</div>
+		</div>
+	
+	</div>
+</body>	
+<script type="text/javascript" src="lib/common/json2.js"></script>
+<script type="text/javascript" src="lib/jquery/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="lib/template/mustache.js"></script>
+<script type="text/javascript" src="lib/common/underscore-1.4.3.js"></script>
+<script type="text/javascript" src="lib/backbone/backbone-min-1.0.0.js"></script>
+<script type="text/javascript" src="lib/backbone/backbone.localStorage.js"></script>
+<script src="lib/tabIndent.js"></script>
+<script type="text/javascript" src="lib/common/prettify.js"></script>
+<script src="app.js"></script>
+<script type="text/javascript">
+	tabIndent.render(document.getElementById('newOneDesc'));
+	tabIndent.render(document.getElementById('newOneCode'));
+</script>
+<!-- 模板 -->
+<script type="text/template" id="item-code">
+	<div>
+		<div class="aEditSection">
+			<a href="#" class="clear">del</a>
+			<h2 class="title" id={{id}}>{{title}}</h2>
+			<div class="edit"><input type="text" class="input titInput" /></div>
+		</div>
+		<div class="aEditSection">
+			<pre class="describe">{{describe}}</pre>
+			<div class="edit"><textarea class="input desInput"></textarea></div>
+		</div>
+		<div class="aEditSection">
+			<!-- <h4 class="codeLanguage">Javascript</h4> -->
+			<pre class="code prettyprint js">{{code}}</pre>
+			<div class="edit"><textarea class="input codeInput"></textarea></div>
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="item-title">
+	<a href="#{{id}}">{{title}}</a>
+</script>
+</html>

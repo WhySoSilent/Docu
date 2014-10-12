@@ -1,0 +1,35 @@
+//
+
+@sideSectionHeaderHeight: 34px;
+@headerBorderColor: #ddd;
+.sideSection {
+	position: relative;
+	margin-top: @sideSectionHeaderHeight;
+	padding-top: 10px;
+
+	&>header {
+		position: absolute;
+		top: -34px;	//!!!
+		box-sizing: border-box;
+		width: 100%;
+		height: @sideSectionHeaderHeight;
+		line-height: @sideSectionHeaderHeight;
+
+		h1,h2,h3,h4,h5,h6 {
+			margin: 0;
+			display: inline-block;
+
+		}
+	}
+
+	ul.btnList {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			height: 25px;
+			margin-bottom: 10px;
+		}
+	}
+}

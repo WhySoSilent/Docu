@@ -1,0 +1,5 @@
+<div id='{{ chapter.id }}' class='chapter'>
+	<h3 ng-if='!editing' ng-click='edit()' class="title">{{ chapter.title }}</h3>
+	<input type='text' ng-model='chapter.title' ng-if='editing' ng-click='edit()' class="title" placeholder='Input title here ...'/>
+	<div section-view ng-repeat='s in chapter.sections' the-section='s' >
+</div>

@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# Cache Manifest v1
+
+CACHE:
+../YouDoc.html
+../lib/bootstrap.min.css
+../lib/prettify.css
+../style.css
+../lib/json2.js
+../lib/jquery-1.9.0.min.js
+../lib/mustache.js
+../lib/underscore-1.4.3.js
+../lib/backbone-min-1.0.0.js
+../lib/backbone.localStorage.js
+../lib/prettify.js
+../app.js
+
+NETWORK:
+#白名单，此处罗列的文件在网络通畅的情况下都会直接跳过缓存
+*
+
+FALLBACK:
+#指定一个模板文件，如果缓存中没有这个页面则显示指定页面
+//offline.html

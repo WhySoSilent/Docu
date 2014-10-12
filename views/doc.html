@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Doc</title>
+	<meta content="text/html"; charset="UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/notice.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/hoverArea.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/listHead.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/sideSection.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/titleSwitcher.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/underlineBtn.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/doc.css">
+	
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		/* e6e6e6 f9f9f9 */
+	</style>
+</head>
+<body ng-app="docu.doc" ng-controller='docCtrl'>
+	<div id="tbody" class="_leftOut _rightOut"  ng-class='{ rightOut : editStatus.rightOut }'>
+		<div id="leftZone" class="_hoverAreaR" ng-class='{ hoverAreaR : editStatus.leftOut }'>
+			<div id="nameplate" class="hoverAreaB"><img class="logo" src="/img/nameplate.png"/></div>
+			<div id="autoBerth">
+				<ul id='qw23er45t' class="hoverAreaT hoverAreaB">
+					<li><a>Navigation</a></li>
+					<li><a>Docs</a></li>
+					<li><a>Team</a></li>
+				</ul>
+				<ul id='navigations'>
+					<li ng-repeat='c in doc.chapters' expander >
+
+					</li>
+					<li class='addNewChapter'><a ng-href="#{{ docServer.tempId }}" ng-click='addNewChapter()'>+ new chapter</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="centerZone">
+			<header class="listHead">
+				<h1>{{ doc.name }}</h1>
+				<div class='spanOptionsPosition'>
+					<span title-switcher='公共的' switch-target='doc.public'>公共的</span>
+					<span title-switcher='协作的' switch-target='doc.synergic'>协作的</span>
+				</div>
+			</header>
+			<div chapter-view ng-repeat='c in doc.chapters' the-chapter='c' ></div>
+			<div id='newChapter'>
+				Add <span>New chapter</span>
+			</div>
+		</div>
+		<div id="rightZone" class="_hoverAreaL" ng-controller='optPanelCtrl' ng-class='{ hoverAreaL : editStatus.rightOut }'>
+			<div ng-if='editStatus.rightOut'>
+				<div class='sideSection hoverAreaT'>
+					<header><h3>Editing</h3></header>
+					<ul class='btnList'>
+						<li><a class='underlineBtn main' ng-click='save()'>Save all change</a></li>
+						<li><a class='underlineBtn ' ng-click='exit()'>Exit to cancel</a></li>
+						<li><a class='underlineBtn important' ng-click='delett()'>Delete section</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='notice' ng-controller='noticeCtrl' ng-show='notice.show'>{{ notice.info }}</div>
+</body>
+<script type="text/javascript" src="/lib/jquery/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="/lib/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="/js/src/docu.services.js"></script>
+<script type="text/javascript" src="/js/src/docu.directives.js"></script>
+<script type="text/javascript" src="/js/src/app_doc.js"></script>
+</html>

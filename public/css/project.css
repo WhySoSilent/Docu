@@ -1,0 +1,10 @@
+.container{width:100%;height:100%;padding:110px 60px;box-sizing:border-box;}.container .col-xs-8{border-right:1px solid #aaa;}
+.container.theProject #docs .hoverList .docInfo h3{margin:20px 0 5px 0;}.container.theProject #docs .hoverList .docInfo h3 a{color:#000;text-decoration:none;cursor:pointer;}
+.container.theProject #docs .hoverList .docInfo p{white-space:nowrap;overflow:hidden;display:inline-block;color:#767676;}.container.theProject #docs .hoverList .docInfo p.dateWidth{width:60%;}
+.container.theProject #docs .hoverList .docInfo .spanPosition{position:absolute;right:0;}.container.theProject #docs .hoverList .docInfo .spanPosition>.titleSwitcher{margin-left:10px;}
+.container.theProject #docs .hoverList .addNewDoc{line-height:80px;}
+.container.theProject #teamMembers .hoverList .member{padding:10px 0;}.container.theProject #teamMembers .hoverList .member .memberName{font-size:20px;}
+.container.theProject #teamMembers .hoverList .member .emailAddress{color:#767676;white-space:nowrap;overflow:hidden;}
+.container.theProject #teamMembers .hoverList .addNewMember{line-height:68px;}
+.container ul.hoverList{list-style-type:none;padding:10px 10px 10px 20px;box-sizing:border-box;}.container ul.hoverList li{position:relative;box-sizing:border-box;border-bottom:1px solid #fff;}
+.container ul.hoverList:hover li{border-bottom:1px solid #eee;}

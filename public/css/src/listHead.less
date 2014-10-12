@@ -1,0 +1,30 @@
+// modules directives
+// 2014-8-2 by Wang at Lanzhou
+
+//标题头
+@listHeadDefaultHeight: 60px;
+.listHead {
+	box-sizing: border-box;
+	width: 100%;
+	height: @listHeadDefaultHeight;
+	line-height: @listHeadDefaultHeight;
+	// padding: 0 10px;
+	border-bottom: 1px solid #aaa;
+
+	h1,h2,h3,h4,h5,h6 {
+		margin: 0;
+		display: inline-block;
+
+	}
+
+	//快捷操作区域 定位
+	.spanOptionsPosition {
+		display: inline-block;
+		margin-left: 40px;
+
+		&>span {
+			margin-right: 15px;
+		}
+	}
+}
+

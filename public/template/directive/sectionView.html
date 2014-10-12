@@ -1,0 +1,32 @@
+<div id='{{ section.id }}' class='section' ng-if='section.type === "text"'>
+	<div ng-if='!editing' ng-click='edit()'>
+		<h4 class='labelTitle'>{{ section.label }}</h4>
+		<pre class='text'>{{ section.content }}</pre>
+	</div>
+	<div ng-if='editing'>
+		<input type='text' ng-model='section.label' class='labelTitle' placeholder='Input title here' />
+		<textarea ng-model='section.content' class='text'></textarea>
+	</div>
+</div>
+<div id='{{ section.id }}' class='section' ng-if='section.type === "image"'>
+	<div ng-if='!editing' ng-click='edit()'>
+		<h4 class='labelTitle'>{{ section.label }}</h4>
+		<div class='image'>
+			<img ng-src="/img/{{ section.content }}">
+		</div>
+	</div>
+	<div ng-if='editing'>
+		<input type='text' ng-model='section.label' class='labelTitle' placeholder='Input title here' />
+		<h1 class='image'>Image Editing Directive Here</h1>
+	</div>
+</div>
+<div id='{{ section.id }}' class='section' ng-if='section.type === "code"'>
+	<div ng-if='!editing' ng-click='edit()'>
+		<h4 class='labelTitle'>{{ section.label }}</h4>
+		<pre class='code'><code>{{ section.content }}</code></pre>
+	</div>
+	<div ng-if='editing'>
+		<input type='text' ng-model='section.label' class='labelTitle' placeholder='Input title here' />
+		<textarea ng-model='section.content' class='code'></textarea>
+	</div>
+</div>

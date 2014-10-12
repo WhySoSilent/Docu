@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Project</title>
+	<meta content="text/html"; charset="UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/listHead.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/titleSwitcher.css">
+	<link rel="stylesheet" type="text/css" href="/css/src/underlineBtn.css">
+	<link rel="stylesheet" type="text/css" href="/css/project.css">
+	
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body ng-app="docu.project">
+	<div class='container theProject' ng-controller="projectCtrl">
+		<div class="row">
+			<div id='docs' class="col-xs-8">
+				<div class='listHead'>
+					<h1>{{ project.name }}</h1>
+					<div class='spanOptionsPosition'>
+						<span title-switcher='公共的' switch-target='project.public'>公共的</span>
+						<span title-switcher='协作的' switch-target='project.synergic'>协作的</span>
+					</div>
+				</div>
+				<ul class='hoverList'>
+					<li ng-repeat='d in project.docs'>
+						<div class='docInfo'>
+							<h3><a ng-href='/project/{{ project.id }}/doc/{{ d.id }}'>{{ d.name }}</a></h3>
+							<p class="dateWidth">created 2 months ago by wang</p>
+							<p class="spanPosition">
+								<span title-switcher='公共的' switch-target='d.public'>公共的</span>
+								<span title-switcher='协作的' switch-target='d.synergic'>协作的</span>
+								<!-- <span class="decoration">协作的</span> -->
+							</p>
+						</div>
+					</li>
+					<!-- <a href=""><li>
+						<div class="projectInfo">
+							<h3>Doc for Design</h3>
+							<p class="dateWidth">created 2 months ago by wang</p>
+							<p class="spanPosition">
+								<span>公共的</span>
+								<span class="decoration">协作的</span>
+							</p>
+						</div>
+					</li></a>
+					<a href=""><li>
+						<div class="projectInfo">
+							<h3>Doc for Design</h3>
+							<p class="dateWidth">created 2 months ago by wang</p>
+							<p class="spanPosition">
+								<span>公共的</span>
+								<span class="decoration">协作的</span>
+							</p>
+						</div>
+					</li></a>
+					<a href=""><li>
+						<div class="projectInfo">
+							<h3>Doc for Design</h3>
+							<p class="dateWidth">created 2 months ago by wang</p>
+							<p class="spanPosition">
+								<span>公共的</span>
+								<span class="decoration">协作的</span>
+							</p>
+						</div>
+					</li></a> -->
+
+					<a class='underlineBtn addNewDoc' ng-click='addNewDoc()'>+ Add New Doc</a>
+				</ul>
+			</div>	
+
+			<div id='teamMembers' class="col-xs-3" ng-controller="teamCtrl">
+				<div class='listHead'><h2>Team</h2></div>
+				<ul class='hoverList'>
+					<li ng-repeat="member in project.members">
+						<div class="member">
+							<div class="memberName">{{ member.name }}</div>
+							<div class="emailAddress">{{ member.mail }}</div>
+						</div>
+					</li>
+					<a class='underlineBtn addNewMember' ng-click='addNewMember()'>+ Add new member</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="/lib/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="/js/src/docu.services.js"></script>
+<script type="text/javascript" src="/js/src/docu.directives.js"></script>
+<script type="text/javascript" src="/js/src/app_project.js"></script>
+</html>

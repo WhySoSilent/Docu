@@ -1,0 +1,8 @@
+<a ng-hide='showMe' ng-click='toggle()'>[+]</a>
+<a ng-show='showMe' ng-click='toggle()'>[-]</a>
+&nbsp;
+<a ng-href="#{{ c.id }}">{{ c.title }}</a>
+<ul ng-if='showMe'>
+	<li ng-repeat='s in c.sections'><a ng-href="#{{ s.id }}">{{ s.label }}</a></li>
+	<li class='addNewSection'><a ng-href="#{{ docServer.tempId }}" ng-click='addNewSection(c)'>new section</a></li>
+</ul>

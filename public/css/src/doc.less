@@ -1,0 +1,304 @@
+//module : chapter of doc
+//2014-8-2 by Wang at Lanzhou
+
+// 三列布局
+#tbody {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	width: 100%;
+
+	//标准界面
+	#leftZone {
+		-webkit-box-flex: 1;
+		box-sizing: border-box;
+		// padding: 80px 0px;
+		-webkit-transition: all 0.2s ease;
+
+		// 为Nav区域设计的自动停靠状态的样式
+		#autoBerth.berthStatus {
+			position: fixed;
+			top: 0;
+		}
+	}
+
+	#centerZone {
+		-webkit-box-flex: 8;
+		box-sizing: border-box;
+		padding: 80px 20px;
+		-webkit-transition: all 0.2s ease;
+	}
+	
+	#rightZone {
+		-webkit-box-flex: 1;
+		box-sizing: border-box;
+		padding: 80px 0px;
+		-webkit-transition: all 0.2s ease;
+	}
+	//左边菜单出来，右边隐藏
+	&.leftOut {
+		#leftZone {
+			width: 300px;
+			-webkit-box-flex: 3;
+			-webkit-transition: all 0.2s ease;
+			padding: 0px;
+			box-sizing: border-box;
+			
+			ul {
+				border-bottom: 1px solid #676767;
+				border-top: 1px solid #676767;
+					
+				li {
+					display: inline-block;
+					height: 40px;
+					line-height: 40px;
+				}
+			}
+		}
+
+		#centerZone {
+			-webkit-box-flex: 7;
+			-webkit-transition: all 0.2s ease;
+			padding: 80px 50px;
+			box-sizing: border-box;
+
+		}
+		
+		#rightZone {
+			-webkit-box-flex: 0;
+			-webkit-transition: all 0.2s ease;
+			display: none;
+
+		}
+	}
+	//右边菜单出来，左边隐藏
+	&.rightOut {
+		#leftZone {
+			-webkit-box-flex: 0;
+			-webkit-transition: all 0.2s ease;
+			display: none;
+		}
+
+		#centerZone {
+			-webkit-box-flex: 7;
+			-webkit-transition: all 0.2s ease;
+			padding: 80px 50px;
+			box-sizing: border-box;
+
+		}
+		
+		#rightZone {
+			width: 300px;
+			-webkit-box-flex: 3;
+			-webkit-transition: all 0.2s ease;
+			padding: 80px 0px 0px 50px;
+			box-sizing: border-box;
+
+		}
+	}
+}
+
+// Nav side
+#leftZone {
+
+	// Project Logo nameplate
+	div#nameplate {
+		box-sizing: border-box;
+		width: 100%;
+		height: 300px;
+		padding: 50px;
+		text-align: center;
+		margin-top: -200px;
+
+		img.logo {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		&:hover {
+			margin-top: 0;
+		}
+	}
+
+	// 
+	ul#qw23er45t {
+		list-style-type: none;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		li {
+			display: inline-block;
+			padding-right: 20px;
+
+			a {
+				color: #000;
+				font-weight: bold;
+				// text-decoration: underline;
+			}
+		}
+	}
+
+	ul#navigations {
+		list-style-type: none;
+
+		&>li {
+			min-height: 26px;
+			line-height: 26px;
+
+			a {
+				color: #000;
+			}
+
+			&:hover {
+				li.addNewSection {
+					display: block;
+				}
+			}
+		}
+
+		li.addNewSection, li.addNewChapter {
+
+			a {
+				color: #AFAFAF;
+
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+
+		li.addNewSection {
+			display: none;
+		}
+	}
+}
+
+// Content side
+#centerZone {
+
+}
+// Opt side
+
+
+
+// 这里是一个特例
+.listHead {
+	margin-bottom: 60px;
+	border-bottom: 1px solid #ddd;
+
+	&:hover {
+		border-bottom: 1px solid #bbb;
+	}
+}
+
+@sectionMargin: 50px;
+@editCellMargin: 15px;
+@editAreaPadding: 5px;
+@editAreaUnderlineColor: #000;
+.chapter {
+	position: relative;
+	padding-left: 20px;
+	margin-bottom: @sectionMargin;
+
+	h1, h2, h3, h4, h5, h6 , p , pre{
+		padding: 0;
+		margin: 0;
+	}
+
+	// Chapter Title
+	.title {
+		position: relative;
+		box-sizing: border-box;
+		left: -20px;
+		width: 40%;
+		height: 35px;		// 24 (fontSize/lineHight) + 10 (padding) + 1 (border bottom)
+		padding: @editAreaPadding 0;
+		margin-bottom: 20px;
+		border: 0;
+		border-bottom: 1px solid #fff;
+
+		//
+		font-size: 24px;
+		line-height: 24px;
+	}
+	input.title {
+		display: block;
+		border-bottom: 1px solid @editAreaUnderlineColor;
+	}
+
+	.section {
+		// Label
+		.labelTitle {
+			box-sizing: border-box;
+			width: 16%;
+			height: 29px;		// 18 (fontSize/lineHight) + 10 (padding) + 1 (border bottom)
+			padding: @editAreaPadding 0;
+			margin-bottom: 10px;
+			border: 0;
+			border-bottom: 1px solid #fff;
+
+			//
+			font-size: 18px;
+			line-height: 18px;
+		}
+		input.labelTitle {
+			display: block;
+			border-bottom: 1px solid @editAreaUnderlineColor;
+		}
+
+		// Text
+		.text {
+			box-sizing: border-box;
+			display: block;
+			padding: @editAreaPadding 0;
+			margin-bottom: @editCellMargin;
+			font-size: 16px;
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			line-height: 25px;
+			color: #000;
+			background: #fff;
+			border: 0;
+			border-bottom: 1px solid #fff;
+		}
+		pre.text {
+			&>span {
+				padding: 1px 2px;
+				background: #F7F7F7;
+				border: 1px solid #D5D5D5;
+				border-radius: 5px;
+			}
+		}
+		textarea.text {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			border-bottom: 1px solid @editAreaUnderlineColor;
+		}
+		// Image
+		.image {
+			padding: @editAreaPadding 0;
+			margin-bottom: @editCellMargin;
+			min-height: 300px;
+
+			&>img {
+				max-width: 100%;
+				max-height: 600px;
+			}
+		}
+		// Code
+		.code {
+			box-sizing: border-box;
+			display: block;
+			padding: 5px 10px;
+			margin-bottom: @editCellMargin;
+			color: #fff;
+			background: #161616;
+			border-radius: 4px;
+		}
+		textarea.code {
+			width: 100%;
+			max-width: 100%;
+			min-height: 160px;
+		}
+	}
+
+}
